@@ -1,0 +1,157 @@
+#{$container} {
+  margin: 0 auto;
+  padding: 0px $line-height; 
+}
+
+$font-family: verdana, sans-serif !default;
+
+img, embed, object, video{
+  max-width:100%;
+}
+input, textarea {
+  padding: 0.5em;
+  font-size: 21px;
+  font-family: arial;
+  border: 1px solid #333333;
+  display: block; 
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  @include column(3, 1);
+  @include prepend-column(0.5); }
+
+input[type=text], input[type=password], input[type=url] {
+  @include column(3, 1);
+  @include prepend-column(0.5);
+}
+
+input[type=submit] {
+  @include clean-pill-button(rgb(0,182,241));
+  @include prepend-column(0.5); }
+
+html {
+  background: $footerBGColor; }
+
+body {
+  background: $secondaryBGColor;
+  color: $primaryColor;
+  // Stops Mobile Safari from auto-adjusting font-sizes
+  -webkit-text-size-adjust: 100%;
+  @if $show-grid-backgrounds{
+    &:before{
+      z-index: 2;
+      content: " ";
+      display:block;
+      position:absolute;
+      left:0;
+      right:0;
+      top:0;
+      bottom:0;
+      width:896px;
+      margin:0 auto;
+      @include grid-background();
+    }
+  }
+}
+
+header[role= banner] {
+  background: $headerBGColor;
+  .container{
+    padding-top: $line-height;
+    padding-bottom: $line-height;
+  }
+}
+
+body>footer {
+  background: $footerBGColor;
+}
+
+#page {
+  padding-top: $line-height;
+  padding-bottom: $line-height;
+  @include padding-leader(1);
+}
+
+[role=main] {
+  background: $primaryBGColor;
+}
+
+nav {
+  background: $footerBGColor;
+  ul {
+    list-style: none; }
+  li {
+    display: inline-block; }
+  a {
+    display: block;
+    background: $buttonBGColor;
+    color: $buttonColor;
+    text-decoration: none;
+    padding: 6px;
+    &.active, &:hover {
+      background: $buttonBGColorActive;
+      color: $buttonColorActive; 
+    }
+  }
+}
+
+.CTA {
+  background: $primaryBGColor; 
+  &:hover{
+    background:rgba($primaryBGColor, .5);
+  }
+}
+
+aside {
+  background: $primaryBGColor; 
+}
+.features{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+
+.pill{
+  display:block;
+  @include column(3);
+  text-align:center;
+  @include clean-pill-button();
+}
+.button{
+  display:block;
+  @include column(3);
+  text-align:center;
+  line-height:3;
+  @include button();
+}
+.bright{
+  display:block;
+  @include column(3);
+  text-align:center;
+  @include bright-button();
+}
+.bright-big{
+  display:block;
+  @include column(3);
+  text-align:center;
+  @include bright-button-big();
+}
+.smooth{
+  display:block;
+  @include column(3);
+  text-align:center;
+  @include smooth-button();
+}
+.subtle{
+  display:block;
+  @include column(3);
+  text-align:center;
+  @include subtle-button();
+}
+
+
+// Selection colors (easy to forget)
+@include selection-color(unquote("rgb(255,255,158)"));

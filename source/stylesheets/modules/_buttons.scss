@@ -1,0 +1,137 @@
+@mixin clean-pill-button($background: #666, $height: 48px){
+  $shadow: darken($background, 20%);
+  background: $background;
+  @include background-image(linear-gradient(rgba(255,255,255,.6),
+                                            rgba(255,255,255,.2) 50%,
+                                            rgba(255,255,255,0) 50%));
+  @include box-shadow($shadow 1px 1px 3px,
+                      inset lighten($background, 50%) 0px 1px 0);
+  color: #fff;
+  border: solid 1px $shadow;
+  height: $height;
+  
+  padding-top: $height*.33;
+  @include border-radius($height/2);
+  @include text-shadow($shadow -1px -1px 0);
+  &:hover{
+    @include text-shadow(none);
+    @include box-shadow(inset lighten($background, 20%) 0px -1px 0);
+    @include background-image(linear-gradient(rgba(255,255,255,.4),
+                                              rgba(255,255,255,.1) 50%,
+                                              rgba(255,255,255,0) 50%));
+  }
+}
+
+@mixin button($color: #666){
+  background:$color;
+  background:$color url(../img/lightNoise.png);
+  @include box-shadow(  0 2px 6px rgba(0,0,0,0.2),
+  inset 0 1px lighten($color, 20%),
+  inset 0 10px 20px rgba(lighten($color, 20%), .4),
+  inset 0 -15px 30px rgba(darken($color, 50%), .4));
+  border:solid 2px #fff;
+  border:solid 2px rgba(0,0,0,.3);
+  text-decoration:none;
+  color: darken($color, 40%);
+  text-shadow:1px 1px 1px rgba(lighten($color, 25%), .55);
+  font-size:18px;
+  @include border-radius(6px);
+  &:hover, &.active, &.active-trail{
+    color: darken($color, 40%);
+    background: darken($color, 15%) url(../img/lightNoise.png);
+    @include box-shadow(none);
+    text-shadow:none;
+    border:solid 2px darken($color, 10%);
+  }
+}
+
+@mixin bright-button($color: #00CC66){
+  background:$color;
+  @include box-shadow(  1px 1px 3px rgba(0,0,0,0.5),
+                        inset 0 1px lighten($color, 20%),
+                        inset 0 1em 2em rgba(lighten($color, 20%), .4),
+                        inset 0 -.5em 1em rgba(darken($color, 20%), .4));
+  border:solid 1px #fff;
+  border:solid 1px $color;
+  text-decoration:none;
+  color: darken($color, 25%);
+  text-shadow:1px 1px 1px rgba(lighten($color, 25%), .55);
+  font-size:18px;
+  @include border-radius(6px);
+  &:hover, &.active, &.active-trail{
+    color: darken($color, 30%);
+    @include box-shadow(none);
+    text-shadow:none;
+    border:solid 1px darken($color, 10%);
+  }
+}
+
+@mixin bright-button-big($color: #00CC66){
+  background:$color;
+  @include box-shadow(  1px 1px 3px rgba(0,0,0,0.5),
+                        inset 0 1px lighten($color, 20%),
+                        inset 0 2em 4em rgba(lighten($color, 20%), .4),
+                        inset 0 -1em 2em rgba(darken($color, 20%), .4));
+  border:solid 1px #fff;
+  border:solid 1px $color;
+  text-decoration:none;
+  color: darken($color, 25%);
+  text-shadow:1px 1px 1px rgba(lighten($color, 25%), .55);
+  font-size:18px;
+  @include border-radius(6px);
+  &:hover, &.active, &.active-trail{
+    color: darken($color, 30%);
+    @include box-shadow(none);
+    text-shadow:none;
+    border:solid 1px darken($color, 10%);
+  }
+}
+
+@mixin smooth-button($color: darken(cyan, 10%)){
+  background:$color;
+  @include background(
+  linear-gradient(top, rgba(#fff, .9),rgba(#fff, .4) 50%, rgba(#fff, 0) 50%), $color);
+  @include  box-shadow(  0 2px 6px rgba(0,0,0,0.2),
+            inset 0 1px lighten($color, 20%),
+            inset 0 10px 20px rgba(lighten($color, 20%), .4),
+            inset 0 -15px 30px rgba(darken($color, 50%), .4)
+            );
+  border:solid 1px #fff;
+  border:solid 1px darken($color, 20%);
+  text-decoration:none;
+  color: darken($color, 45%);
+  text-shadow:1px 1px 1px rgba(lighten($color, 25%), .55);
+  font-size:16px;
+  border-radius:24px;
+  &:hover, &.active, &.active-trail{
+    color: darken($color, 40%);
+    background: darken($color, 15%);
+    @include box-shadow(none);
+    text-shadow:none;
+    border-color:darken($color, 10%);
+  }
+}
+
+@mixin subtle-button($color: #eee){
+  background:$color;
+  @include box-shadow(  1px 1px 3px rgba(0,0,0,0.1),
+                        inset 0 1px #fff,
+                        inset 0 1em 1em rgba(lighten($color, 80%), .4),
+                        inset 0 -1em 2em rgba(darken($color, 20%), .1));
+  border:solid 1px darken($color, 5%);
+  text-decoration:none;
+  color: #666;
+  text-shadow:1px 1px 0px #fff;
+  font-size:18px;
+  @include border-radius(3px);
+  line-height:1.5;
+  padding:.75em 1em .5em 1em;
+  &:hover, &.active, &.active-trail{
+    color: darken($color, 40%);
+    background: darken($color, 5%);
+    @include box-shadow(none);
+    text-shadow:none;
+    border-color:darken($color, 10%);
+  }
+}
+
