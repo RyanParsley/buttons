@@ -1,7 +1,6 @@
-# My middleman starting point using Haml and Sass (scss)
+# A collection of buttons made with CSS3
 
-Clone this project into `~/.middleman/` then change into whatever directory
-you like to work from. Use `middleman init [newDirectoryName]
---template=Pickle` as illustrated in the middleman documentation.
+I'm starting to collect the code I use to make buttons in different
+projects. I'm looking for patterns and hoping to elemenate redundancy.
+Look for the button code in `source/stylesheets/modules/buttons.scss`.
 
-You&rsquo;ll need [middleman](https://github.com/middleman/middleman) installed before this will do you any good.
